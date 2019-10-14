@@ -9,66 +9,58 @@ print("5 - 52")
 home_work = [1,2,3,4,5,]
 
 def eleven_b(x, y, z):
+    L = [' a = ','b = ']
     a = (3 + math.exp(y - 1))/ (1+ pow(x,2)* math.fabs(y - math.tan(z)))
+    L [1:1] = [a,'\n']
+    #L [2:2] = ['\n']
     b = 1 + math.fabs(y - x) + pow(y - x,2)/ 2 + pow(math.fabs(y - x), 3)/ 3
-    print ("a =", a)
-    print ("b =", b)
+    L [4:] = [b]
     del x, y, z, a, b
-    if len(home_work) == 0:
-        sys.exit()
+    return (L)
 
 def twenty_three_a(a, b, c):
+    L = [' Высота_1 = ', 'Высота_2 = ','Высота_3 = ']
     p = (a + b + c) / 2
     h_1 = 2 / a * math.sqrt(p * (p - a) * (p - b) * (p - c))
+    L[1:1] = [h_1, '\n']
     h_2 = 2 / b * math.sqrt(p * (p - a) * (p - b) * (p - c))
+    L[4:4] = [h_2, '\n']
     h_3 = 2 / c * math.sqrt(p * (p - a) * (p - b) * (p - c))
-    print("h_1 =", h_1)
-    print("h_2 =", h_2)
-    print("h_3 =", h_3)
-    del a, b, c
-    if len(home_work) == 0:
-        sys.exit()
+    L[7:] = [h_3]
+    del a, b, c, p
+    return (L)
 
 def thirty_one_3(a):
     a_1 = a * a
-    print("a_1 =", a_1)
     a_2 = a_1 * a
-    print("a_2 =", a_2)
     a_3 = a_2 * a_2
-    print("a_3 =", a_3)
     a_4 = a_3 * a_2
-    print("a_4 =", a_4)
     a_5 = a_4 * a_3
-    print("a_5 =", a_5)
-    check = pow(a, 15)
-    print("check =", check)
     a = 0
-    if len(home_work) == 0:
-        sys.exit()
+    return (a_5)
 
 def thirty_six(a, b, c):
+    L = []
     if a < b:
-        print(a < b)
         if b < c:
-            print("Равенство верно")
+            L[:] = ['Равенство верно']
         else:
-            print("равенство ложно")
+            L[:] = ['Равенство ложно']
     else:
-        print("равенство ложно")
+        L[:] = ['Равенство ложно']
     del a, b, c
-    if len(home_work) == 0:
-        sys.exit()
+    return (L)
 
 def fifty_two(a, b, c, d, s, t, u):
+    L = []
     l_1 = s * a + t * b + u
     l_2 = s * c + t * d + u
     if l_1 < 0 and l_2 < 0 or l_1 > 0 and l_2 > 0:
-        print("Точки (A, B) и (C, D) принадлежат одной плоскости")
+        L[:] = ['Точки (A, B) и (C, D) принадлежат одной плоскости']
     else:
-        print("Точки (A, B) и (C, D) принадлежат разным плоскостям")
+        L[:] = ['Точки (A, B) и (C, D) принадлежат разным плоскостям']
     del a, b, c, d, s, t, u
-    if len(home_work) == 0:
-        sys.exit()
+    return (L)
 
 while True:
     task = int(input("Введите номер задачи"))
@@ -79,20 +71,32 @@ while True:
         x = int(input("Введите Х"))
         y = int(input("Введите Y"))
         z = int(input("Введите Z"))
-        eleven_b(x, y, z)
+        #print(*eleven_b(x, y, z),sep ='\n')
+        print (*eleven_b(x, y, z))
+        if len(home_work) == 0:
+            sys.exit()
     elif task == 2:
+        print("Введите стороны треугольника")
         a = int(input("Введите A"))
         b = int(input("Введите B"))
         c = int(input("Введите C"))
-        twenty_three_a(a, b, c)
+        print(*twenty_three_a(a, b, c))
+        if len(home_work) == 0:
+            sys.exit()
     elif task == 3:
-        a = int(input("Введите A"))
-        thirty_one_3(a)
+        print("Возвести в степень число за 5 действий, используя только умножение")
+        a = int(input("Введите число"))
+        print(thirty_one_3(a))
+        if len(home_work) == 0:
+            sys.exit()
     elif task == 4:
+        print("Верно ли равенство A < B < C")
         a = int(input("Введите A"))
         b = int(input("Введите B"))
         c = int(input("Введите C"))
-        thirty_six(a, b, c)
+        print(*thirty_six(a, b, c))
+        if len(home_work) == 0:
+            sys.exit()
     elif task == 5:
         print("ВВедите числа a, b, c, d, s, t, u (s и t одновременно не равны нулю)")
         a = int(input("Введите A"))
@@ -106,6 +110,8 @@ while True:
             s = int(input("Введите S"))
             t = int(input("Введите T"))
         u = int(input("Введите U"))
-        fifty_two(a, b, c, d, s, t, u)
+        print(*fifty_two(a, b, c, d, s, t, u))
+        if len(home_work) == 0:
+            sys.exit()
     else:
         print("Нет такого номера")
