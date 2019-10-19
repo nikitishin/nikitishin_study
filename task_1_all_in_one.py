@@ -9,26 +9,16 @@ print("5 - 52")
 home_work = [1,2,3,4,5,]
 
 def eleven_b(x, y, z):
-    L = [' a = ','b = ']
     a = (3 + math.exp(y - 1))/ (1+ pow(x,2)* math.fabs(y - math.tan(z)))
-    L [1:1] = [a,'\n']
-    #L [2:2] = ['\n']
     b = 1 + math.fabs(y - x) + pow(y - x,2)/ 2 + pow(math.fabs(y - x), 3)/ 3
-    L [4:] = [b]
-    del x, y, z, a, b
-    return (L)
+    return (a, b)
 
 def twenty_three_a(a, b, c):
-    L = [' Высота_1 = ', 'Высота_2 = ','Высота_3 = ']
     p = (a + b + c) / 2
     h_1 = 2 / a * math.sqrt(p * (p - a) * (p - b) * (p - c))
-    L[1:1] = [h_1, '\n']
     h_2 = 2 / b * math.sqrt(p * (p - a) * (p - b) * (p - c))
-    L[4:4] = [h_2, '\n']
     h_3 = 2 / c * math.sqrt(p * (p - a) * (p - b) * (p - c))
-    L[7:] = [h_3]
-    del a, b, c, p
-    return (L)
+    return (h_1, h_2, h_3)
 
 def thirty_one_3(a):
     a_1 = a * a
